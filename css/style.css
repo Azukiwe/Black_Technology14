@@ -112,7 +112,8 @@ border-radius: 30px;
 .modalInput {
     width: 40vw;
     height: 92vh;
-    background-color: aqua;
+    background-color:pink;
+    
 
 }
 
@@ -126,4 +127,26 @@ border-radius: 30px;
 
 .showModal {
     margin-top: 10rem;
+}
+form input{
+width: 40vw;
+border: none;
+border-radius: 50px;
+}
+form label{
+    font-size: 1.5rem;
+}
+form button{
+    transform: tr;
+}
+.fown{
+    display: flex;
+}
+.fown ul{
+    
+}
+#editForm input{
+    width: 29rem;
+    border:2px solid grey;
+    border-radius: 0;
 }

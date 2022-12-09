@@ -65,13 +65,13 @@ let products = JSON.parse(localStorage.getItem("phones"));
 function display1() {
   products.forEach((cell) => {
     document.querySelector(".fown").innerHTML += `<ul>
-    <li>Name:${cell.name}</li>
-    <li>Processor: ${cell.Processor}</li>
-    <li>Ram: ${cell.Ram}</li>
-    <li>Storage: ${cell.Storage}</li>
-    <li>Display: ${cell.Display}</li>
-    <li>Camera: ${cell.Camera}</li>
-    <li>Battery: ${cell.Battery}</li>
+    <li >Name:${cell.name}</li>
+    <li><i class="fa-solid fa-microchip"></i>Processor: ${cell.Processor}</li>
+    <li><i class="fa-solid fa-memory"></i> Ram: ${cell.Ram}</li>
+    <li><i class="fa-solid fa-usb-drive"></i> Storage: ${cell.Storage}</li>
+    <li><i class="fa-solid fa-display"></i> Display: ${cell.Display}</li>
+    <li ><i class="fa-solid fa-camera"></i> Camera: ${cell.Camera}</li>
+    <li><i class="fa-solid fa-battery-three-quarters"></i> Battery: ${cell.Battery}</li>
     </ul> 
     <img src="${cell.image}"> `;
   });
