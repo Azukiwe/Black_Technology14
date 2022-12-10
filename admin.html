@@ -107,7 +107,7 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="searchBtn btn-outline-success" type="submit">
                 Search
               </button>
             </form>
@@ -148,15 +148,11 @@
             <th >Edit</th>
             <th>Delete</th>
           </thead>
-          <tbody></tbody>
+          <tbody class="prods"></tbody>
         </table>
       <!-- </div> -->
 
       <!--EDIT PRODUCT BUTTON MODAL----->
-     <!-- Button trigger modal -->
-
-
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -168,7 +164,7 @@
         <form id="editForm" action="">
             <label  for="">ID</label>
             <input id="editId" type="text">
-            <label for="">Name</label>
+            <label for="">ProductName</label>
             <input id="editName" type="text">
             <label for="">Processor</label>
             <input id="editChip" type="text">
@@ -187,24 +183,8 @@
     </div>
   </div>
 </div>
-      <!-- <div class="editModal">
-        <div class="editInput">
-          <form action="">
-            <label for="">ID</label>
-            <input type="text">
-            <label for="">Name</label>
-            <input type="text">
-            <label for="">Processor</label>
-            <input type="text">
-            <label for="">Colour</label>
-            <input type="text">
-            <label for="">Price</label>
-            <input type="text">
-            <button>Save changes</button>
-            <button>close</button>
-          </form>
-        </div>
-      </div> -->
+<button id="sort" onclick="sorttbl()"><a><i class="fas fa-regular fa-sort">Sort </i></a></button>
+     
     </main>
     <script src="./js/admin.js"></script>
     <!-- JavaScript Bundle with Popper -->

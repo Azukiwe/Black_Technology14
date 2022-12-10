@@ -21,7 +21,50 @@ let create = [
     price: "R5 000",
     color: "Blue",
   },
+  {
+    id: 4,
+    productName: "Oppo Reno5 5G",
+    processor: "Qualcomm Snapdragon 765G",
+    price: "R3 549",
+    color: "grey",
+  },
+  {
+    id: 5,
+    productName: "Iphone 13 Pro Max",
+    processor: "A15 Bionic chip",
+    price: "R38 999",
+    color: "Pink",
+  },
+  {
+    id: 6,
+    productName: "ZTE Axon 11 SE 5G",
+    processor: "MediaTek MT6873",
+    price: "R599",
+    color: "Blue",
+  },
+  {
+    id: 7,
+    productName: "HTC 5G Hub",
+    processor:"Qualcomm Snapdragon 855 (Snapdragon X50 5G Modem)",
+    price: "R1 999",
+    color: "black",
+  },
+  {
+    id: 8,
+    productName: "HUAWEI 5G CPE Pro 2",
+    processor: "Balong 5000 chipset, Gigahome Wi-Fi chipset",
+    price: "R799",
+    color: "Grey",
+  },
+  {
+    id: 9,
+    productName: "5G WiFi Repeater for Long Range Wireless Wifi Extender Baku Baki",
+    processor: "4 x external",
+    price: "R1 399",
+    color: "White",
+  },
 ];
+localStorage.setItem("create", JSON.stringify(create));
 //////////////////////MODAL /////////////////
 document.querySelector(".model").id = "hideModal";
 
@@ -38,20 +81,22 @@ function showModal() {
 
 let tableList = JSON.parse(localStorage.getItem("create"));
 async function getTable() {
-  document.querySelector("tbody").innerHTML = "";
+  // document.querySelector("tbody").innerHTML = "";
   create.forEach((table) => {
-    document.querySelector("tbody").innerHTML += `
+    console.log(create);
+    document.querySelector(".prods").innerHTML += `
     <tr>
     <td class="no">${table.id}</td>
     <td id="name">${table.productName}</td>
     <td id="chip">${table.processor}</td>
     <td id="price">${table.price}</td>
     <td id="color">${table.color}</td>
-    <button type="button" class="btn btn-primary" id="editBtn" onclick="btnE" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    
+    <button type="button" class="btn" id="editBtn" onclick="edit Modal(${table.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <i class="fa-solid fa-pen-to-square"></i>
   
 </button>
-    <td><button type="button" class="btn btn-danger" class="trash" id="bin" onclick="deleteBtn(this)" ><i class="fa-solid fa-trash"></i></button></td>   
+    <td><button type="button" class="btn" class="trash" id="bin" onclick="deleteBtn(this)" ><i class="fa-solid fa-trash"></i></button></td>   
     </tr>`;
   });
 }
@@ -81,6 +126,7 @@ function deleteBtn(r) {
   let processor = document.querySelector("#chip").value;
   let price = document.querySelector("#price").value;
   let color = document.querySelector("#color").value;
+  let editC = document.querySelector("#editBtn").value;
   let p = r.parentNode.parentNode.rowIndex;
   document.getElementById("tableData").deleteRow(p);
   // create.slice(0,-1)
@@ -115,15 +161,57 @@ let add = (e) => {
 document.getElementById("add").addEventListener("click", add);
 
 /////////EDIT MODAL//////
-function editModal(q){
-  console.log(q)
-  console.log(create[q])
-  let info = create[q]
-  console.log(info.create)
-  document.querySelector("#editId").value = info.id
-  document.querySelector("#editName").value = info.productName
-  document.querySelector("#editChip").value = info.processor
-  document.querySelector("#editColor").value = info.color
-  document.querySelector("#editPrice").value = info.price
+function editModal(q) {
+  console.log(q);
+  console.log(create[q]);
+  let info = create[q];
+  console.log(info.create);
+  document.querySelector("#editId").value = info.id;
+  document.querySelector("#editName").value = info.productName;
+  document.querySelector("#editChip").value = info.processor;
+  document.querySelector("#editColor").value = info.color;
+  document.querySelector("#editPrice").value = info.price;
 }
-document.getElementById("editBtn").addEventListener("click",(btnE));
+
+//SORT ITEMS
+function sorttbl() {
+  create.sort();
+  create.sort((a, b) => {
+    if (a.productName.toLowerCase() < b.productName.toLowerCase()) return -1;
+    if (a.productName.toLowerCase() > b.productName.toLowerCase()) return 1;
+    return 0;
+  });
+  localStorage.setItem("create", JSON.stringify(create));
+  document.querySelector(".prods").innerHTML = "";
+  getTable();
+}
+
+console.log(create);
+
+//FILTER(wifi)
+let wifiItem = document.querySelector(".searchBtn");
+let girl = document.querySelector(".router");
+
+wifiItem.addEventListener("keyup", ()=>{
+  try{
+    if(!wifiItem.value.length) throw "Enter a product name";
+    tableList = tableList.filter((girl) => {
+      return girl.productName.toLowerCase().includes(wifiItem.value.toLowerCase());
+    });
+    if(!tableList.length) throw "This product doesn't exist";
+  } catch(data){}
+})
+//Filter(phone)
+let phoneItem = document.querySelector(".searchBtn");
+let boy = document.querySelector(".router");
+
+phoneItem.addEventListener("keyup", ()=>{
+  try{
+    if(!phoneItem.value.length) throw "Enter a product name";
+    tableList = tableList.filter((boy) => {
+      return boy.productName.toLowerCase().includes(wifiItem.value.toLowerCase());
+    });
+    if(!tableList.length) throw "This product doesn't exist";
+  } catch(data){}
+})
+getTable()

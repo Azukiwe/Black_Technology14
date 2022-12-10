@@ -1,152 +1,166 @@
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height:100vh;
+  height: 100vh;
 }
 
-#main{
- /*background-image: url(https://i.postimg.cc/j2Bj9Q71/My-project-3.png );
+#main {
+  /*background-image: url(https://i.postimg.cc/j2Bj9Q71/My-project-3.png );
     width: 50vw;
     height: 50vh;
     background-position: center;
     background-size: cover;*/
-    background-color: darkslateblue;
-    display: flex;
-    min-height: 100% ;
-    
-    
-} 
-.mobile{
-    background-image: url(https://i.postimg.cc/j2Bj9Q71/My-project-3.png);
-     width: 60vw;
-    /* height:100vh;  */
-    background-position:left;
-    background-size: cover;
-    background-repeat: no-repeat;
-   
-    
+  background-color: darkslateblue;
+  display: flex;
+  min-height: 100%;
 }
-.m_text{
-    transform: translateY(250px);
-    font-family:'Courier New', Courier, monospace;
-    font-size: 2rem; 
-   word-wrap: break-word;
-   width: 30rem;
-   color: aliceblue;
-   height: 350px;
+.mobile {
+  background-image: url(https://i.postimg.cc/j2Bj9Q71/My-project-3.png);
+  width: 60vw;
+  /* height:100vh;  */
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.m_text span{
-    font-size: 4rem;
-    color: deeppink;
+.m_text {
+  transform: translateY(250px);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  word-wrap: break-word;
+  width: 30rem;
+  color: aliceblue;
+  height: 350px;
 }
-.m_text #text{
-    font-size: 19px;
-    font-family: cursive;
+.m_text span {
+  font-size: 4rem;
+  color: deeppink;
 }
-.m_text button:hover{
-background-color:deeppink;
+.m_text #text {
+  font-size: 19px;
+  font-family: cursive;
 }
-.m_text button{
-    border-radius: 40px;
-    width: 150px;
-    background: none;
-    border: 3px solid transparent;
-    color:aliceblue;
-    outline:2px solid white;
+.m_text button:hover {
+  background-color: deeppink;
 }
-.cell{
-    background-image: url(https://i.postimg.cc/tC1nc1zn/cellphone-wallpaper-removebg-preview.png);
-    width: 50vw;
-    height:50vh;
-    /* margin: auto; */
-    background-position: center;
-    background-size: cover;
-    /* padding-top: 90px; */
-    transform: translateY(200px);
-    /* background-color: black; */
+.m_text button {
+  border-radius: 40px;
+  width: 150px;
+  background: none;
+  border: 3px solid transparent;
+  color: aliceblue;
+  outline: 2px solid white;
 }
-#phone{
-   transform: translateX(900px);
-    font-family:'Courier New', Courier, monospace;
-    font-size: 40px; 
-   word-wrap: break-word;
-   width: 30rem;
-   color: aqua;
-  
+.cell {
+  background-image: url(https://i.postimg.cc/tC1nc1zn/cellphone-wallpaper-removebg-preview.png);
+  width: 50vw;
+  height: 50vh;
+  /* margin: auto; */
+  background-position: center;
+  background-size: cover;
+  /* padding-top: 90px; */
+  transform: translateY(200px);
+  /* background-color: black; */
 }
-.cell button{
-transform: translateX(1000px);
-padding: 12px;
-border: 3px solid black;
-border-radius: 30px;
-
+#phone {
+  transform: translateX(900px);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
+  word-wrap: break-word;
+  width: 30rem;
+  color: aqua;
 }
-.wifi{
-    background-image: url(https://i.postimg.cc/Cxs6dCv9/A190205-Sommer-wifi-towers-nbfz9u.gif);
-    background-position:center;
-    background-size: cover;
-    width: 100vw;
-    height: 50vw;
-
+.cell button {
+  transform: translateX(1000px);
+  padding: 12px;
+  border: 3px solid black;
+  border-radius: 30px;
 }
-#demo{
-    transform: translateY(250px);
+.wifi {
+  background-image: url(https://i.postimg.cc/Cxs6dCv9/A190205-Sommer-wifi-towers-nbfz9u.gif);
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 50vw;
 }
-.model{
-    width:100vw;
-    height:100vh; 
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-
+#demo {
+  transform: translateY(250px);
+}
+.model {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalInput {
-    width: 40vw;
-    height: 92vh;
-    background-color:pink;
-    
-
+  width: 40vw;
+  height: 92vh;
+  background-color: pink;
 }
 
 #hideModal {
-    display: none;
+  display: none;
 }
 
 #showModal {
-    display: flex;
+  display: flex;
 }
 
 .showModal {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
-form input{
-width: 40vw;
-border: none;
-border-radius: 50px;
+form input {
+  width: 40vw;
+  border: none;
+  border-radius: 50px;
 }
-form label{
-    font-size: 1.5rem;
+form label {
+  font-size: 1.5rem;
 }
-form button{
-    transform: tr;
+form button {
+  transform: tr;
 }
-.fown{
+.fown {
+  display: flex;
+}
+.fown ul {
+}
+#editForm input {
+  width: 29rem;
+  border: 2px solid grey;
+  border-radius: 0;
+}
+/* CARD WIFI */
+
+header {
+  height: 75px;
+}
+
+.card{
+
+    width: auto;
+    height: auto;
+    margin: 20px 30px;
+    padding: 50px 50px;
+}
+/* .card-img-top {
+    height: 100%;
+    width:250px;
+} */
+
+.router {
     display: flex;
-}
-.fown ul{
+    flex-direction: row;
     
-}
-#editForm input{
-    width: 29rem;
-    border:2px solid grey;
-    border-radius: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
