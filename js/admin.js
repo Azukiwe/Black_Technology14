@@ -201,4 +201,22 @@ function sorttbl() {
 
 console.log(create);
 
+//checkout
+let array= localStorage.getItem("create",JSON.stringify(create));
+let checkout=[]
+localStorage.setItem("outItem",JSON.stringify(checkout));
+let shop= JSON.parse(localStorage.getItem("outItem"));
+
+function addShop(k){
+    if (shop.includes(tableList[k])){
+        tableList[k].quantity++;
+        localStorage.setItem("shop",JSON.stringify(cart));
+    }
+    else {
+        tableList[k].quantity=1;
+    shop.push(tableList[k]);
+localStorage.setItem("shop",JSON.stringify(shop))
+}
+}
+
 
