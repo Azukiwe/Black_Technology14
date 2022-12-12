@@ -160,8 +160,21 @@ let add = (e) => {
 };
 document.getElementById("add").addEventListener("click", add);
 
+///UPDATE
+let q=0
+function updateItems(q){
+  let info =create[q -1];
+  console.log(info);
+  document.querySelector("#editId").value = info.id;
+  document.querySelector("#editName").value = info.productName;
+  document.querySelector("#editChip").value = info.processor;
+  document.querySelector("#editColor").value = info.color;
+  document.querySelector("#editPrice").value = info.price;
+  q = 1;
+}
+
 /////////EDIT MODAL//////
-function editModal(q) {
+function editModal() {
   let info = create[q-1];
   console.log(info);
   document.querySelector("#editId").value = info.id;
