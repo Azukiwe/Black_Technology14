@@ -38,6 +38,7 @@ let media = JSON.parse(localStorage.getItem("wifi"));
 
 console.log(media);
 function display2() {
+  document.querySelector(".router").innerHTML = '';
   media.forEach((router) => {
     document.querySelector(".router").innerHTML += `
       <div class="card">
@@ -55,3 +56,20 @@ function display2() {
   });
 }
 display2();
+
+//FILTER(wifi)
+let wifiItem = document.querySelector(".subject");
+let girl = document.querySelector(".router");
+
+wifiItem.addEventListener("keyup", ()=>{
+  try{
+    if(!wifiItem.value.length) throw "Enter a product name";
+    media = media.filter((p) => {
+      return p.name.toLowerCase().includes(wifiItem.value.toLowerCase());
+    });
+    if(!media.length) throw "This product doesn't exist";
+    display2()
+  } catch(data){
+    girl.innerHTML = data;
+  }
+})

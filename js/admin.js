@@ -92,10 +92,10 @@ async function getTable() {
     <td id="price">${table.price}</td>
     <td id="color">${table.color}</td>
     
-    <button type="button" class="btn" id="editBtn" onclick="edit Modal(${table.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="fa-solid fa-pen-to-square"></i>
+    <td><button type="button" class="btn" id="editBtn" onclick="edit  data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-solid fa-pen-to-square"></i></button></td>
   
-</button>
+
     <td><button type="button" class="btn" class="trash" id="bin" onclick="deleteBtn(this)" ><i class="fa-solid fa-trash"></i></button></td>   
     </tr>`;
   });
@@ -162,16 +162,16 @@ document.getElementById("add").addEventListener("click", add);
 
 /////////EDIT MODAL//////
 function editModal(q) {
-  console.log(q);
-  console.log(create[q]);
-  let info = create[q];
-  console.log(info.create);
+  let info = create[q-1];
+  console.log(info);
   document.querySelector("#editId").value = info.id;
   document.querySelector("#editName").value = info.productName;
   document.querySelector("#editChip").value = info.processor;
   document.querySelector("#editColor").value = info.color;
   document.querySelector("#editPrice").value = info.price;
 }
+localStorage.setItem("".JSON.stringify(create));
+getTable()
 
 //SORT ITEMS
 function sorttbl() {
@@ -188,30 +188,4 @@ function sorttbl() {
 
 console.log(create);
 
-//FILTER(wifi)
-let wifiItem = document.querySelector(".searchBtn");
-let girl = document.querySelector(".router");
 
-wifiItem.addEventListener("keyup", ()=>{
-  try{
-    if(!wifiItem.value.length) throw "Enter a product name";
-    tableList = tableList.filter((girl) => {
-      return girl.productName.toLowerCase().includes(wifiItem.value.toLowerCase());
-    });
-    if(!tableList.length) throw "This product doesn't exist";
-  } catch(data){}
-})
-//Filter(phone)
-let phoneItem = document.querySelector(".searchBtn");
-let boy = document.querySelector(".router");
-
-phoneItem.addEventListener("keyup", ()=>{
-  try{
-    if(!phoneItem.value.length) throw "Enter a product name";
-    tableList = tableList.filter((boy) => {
-      return boy.productName.toLowerCase().includes(wifiItem.value.toLowerCase());
-    });
-    if(!tableList.length) throw "This product doesn't exist";
-  } catch(data){}
-})
-getTable()

@@ -63,6 +63,7 @@ let phones = [
 let products = JSON.parse(localStorage.getItem("phones"));
 
 function display1() {
+  document.querySelector(".fown").innerHTML ='';
   products.forEach((cell) => {
     document.querySelector(".fown").innerHTML += `<ul>
     <li >Name:${cell.name}</li>
@@ -78,30 +79,19 @@ function display1() {
 }
 display1();
 
-//FILTER(wifi)
-let wifiItem = document.querySelector(".searchBtn");
-let girl = document.querySelector(".router");
-
-wifiItem.addEventListener("keyup", ()=>{
-  try{
-    if(!wifiItem.value.length) throw "Enter a product name";
-    tableList = tableList.filter((girl) => {
-      return girl.productName.toLowerCase().includes(wifiItem.value.toLowerCase());
-    });
-    if(!tableList.length) throw "This product doesn't exist";
-  } catch(data){}
-})
 //Filter(phone)
-let phoneItem = document.querySelector(".searchBtn");
-let boy = document.querySelector(".router");
+let phoneItem = document.querySelector(".gear");
+let boy = document.querySelector(".fown");
 
 phoneItem.addEventListener("keyup", ()=>{
   try{
     if(!phoneItem.value.length) throw "Enter a product name";
-    tableList = tableList.filter((boy) => {
-      return boy.productName.toLowerCase().includes(wifiItem.value.toLowerCase());
+    products = products.filter((j) => {
+      return j.name.toLowerCase().includes(phoneItem.value.toLowerCase());
     });
-    if(!tableList.length) throw "This product doesn't exist";
-  } catch(data){}
+    if(!products.length) throw "This product doesn't exist";
+    display1()
+  } catch(data){
+    boy.innerHTML = data;
+  }
 })
-getTable()
